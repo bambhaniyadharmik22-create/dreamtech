@@ -5,27 +5,129 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="Style.css">
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #fff;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .login-form {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            width: 350px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .login-form h1 {
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            text-align: center;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        .login-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .login-form input {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1.5rem;
+            border: none;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.25);
+            color: #fff;
+            font-size: 1rem;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+        }
+
+        .login-form input:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .login-form input:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.35);
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+        }
+
+        .login-form input::placeholder {
+            color: #ddd;
+        }
+
+        .login-form button {
+            width: 100%;
+            padding: 0.75rem;
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .login-form button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Login to Your Account</h1>
-    </header>
-    <main>
-        <form class="login-form" onsubmit="handleLogin(event)">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+    <form class="login-form" onsubmit="handleLogin(event)">
+        <h1>Login</h1>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
 
-            <button type="submit">Login</button>
-        </form>
-    </main>
+        <button type="submit">Login</button>
+    </form>
     <script>
         function handleLogin(event) {
-            event.preventDefault(); // Prevent form submission
-            // Add validation logic here if needed
-            window.location.href = 'home.html'; // Redirect to home page
+            event.preventDefault();
+            // Simulate login success
+            sessionStorage.setItem('loggedIn', 'true');
+            window.location.href = 'index.html';
         }
     </script>
 </body>

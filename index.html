@@ -109,6 +109,14 @@
             alert('You have been signed out.');
             window.location.href = 'login.html'; // Redirect to login page
         }
+
+        // Check if the user is logged in
+        const isLoggedIn = sessionStorage.getItem('loggedIn');
+
+        if (!isLoggedIn) {
+            // Redirect to the login page
+            window.location.href = 'login.html';
+        }
     </script>
 </body>
 </html>
