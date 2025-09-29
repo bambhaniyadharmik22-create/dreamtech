@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <header>
+        <h1>Login to Your Account</h1>
+    </header>
+    <main>
+        <form class="login-form" onsubmit="handleLogin(event)">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+    </main>
+    <script>
+        function handleLogin(event) {
+            event.preventDefault(); // Prevent form submission
+            // Add validation logic here if needed
+            window.location.href = 'home.html'; // Redirect to home page
+        }
+    </script>
+</body>
+</html>
